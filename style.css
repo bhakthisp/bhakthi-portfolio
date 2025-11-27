@@ -19,6 +19,15 @@ body{
   background: var(--bg);
   color: var(--text);
 }
+/* Profile photo on right corner */
+.profile-photo {
+    float: right;           /* Moves image to the right */
+    width: 150px;           /* Adjust size as needed */
+    height: auto;
+    margin: 0 0 15px 15px;  /* Space between image and text */
+    border-radius: 10px;    /* Rounded corners, optional */
+    border: 2px solid #87CEFA; /* Sky blue border for style */
+}
 
 header{
   background: var(--nav-bg);
@@ -103,3 +112,4 @@ footer{
     padding:22px;
   }
 }
+
