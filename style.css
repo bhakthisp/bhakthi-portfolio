@@ -1,183 +1,145 @@
-/* ===================== Root Variables ===================== */
-:root{
-  --bg: #e8f3ff;
-  --nav-bg: #3b82f6;
-  --text: #0f172a;
-  --card: #ffffff;
-  --accent: #2563eb;
-  --accent-light: #93c5fd;
-  --muted: #475569;
-  --shadow: 0 6px 20px rgba(0,0,0,0.08);
-  --radius: 14px;
+:root {
+  --bg: #e8f3ff;           /* Light blue background */
+  --nav-bg: #3b82f6;       /* Navbar blue */
+  --text: #0f172a;         /* Dark text */
+  --card: #ffffff;          /* Card background */
+  --accent: #2563eb;        /* Accent color for headings */
+  --accent-light: #93c5fd;  /* Lighter accent */
+  --muted: #475569;         /* Footer text */
+  --shadow: 0 6px 20px rgba(0,0,0,0.08);  /* Card shadow */
+  --radius: 14px;           /* Card border radius */
 }
 
-/* ===================== Global Styles ===================== */
-*{
-  box-sizing:border-box;
+/* Global Reset */
+* {
+  box-sizing: border-box;
 }
 
-body{
-  margin:0;
-  padding:0;
+body {
+  margin: 0;
+  padding: 0;
   font-family: "Poppins", Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
 }
 
-p, ul{
-  font-size:16px;
-  color: var(--text);
-}
-
-ul{
-  padding-left:20px;
-  margin:0;
-}
-
-/* ===================== Header ===================== */
-header{
+/* Navbar */
+header {
   background: var(--nav-bg);
-  padding:16px 22px;
-  color:#fff;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-radius:0 0 var(--radius) var(--radius);
-  box-shadow: var(--shadow);
+  padding: 16px 22px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: var(--shadow);
+  position: relative; /* for photo positioning */
 }
 
-header h1{
-  margin:0;
-  font-size:22px;
-  font-weight:700;
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
 }
 
-.profile-photo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--accent);
-    margin-left: auto;
+nav {
+  display: flex;
+  gap: 14px;
 }
 
-/* ===================== Navigation ===================== */
-nav{
-  display:flex;
-  gap:14px;
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
 }
 
-nav a{
-  color:#fff;
-  text-decoration:none;
-  padding:8px 14px;
-  border-radius:8px;
-  font-weight:600;
-  background: rgba(255,255,255,0.1);
-  transition:0.2s;
-}
-
-nav a:hover{
-  background: rgba(255,255,255,0.25);
+nav a:hover {
+  background: rgba(255, 255, 255, 0.25);
   transform: scale(1.05);
 }
 
-nav a.active{
-  background:#fff;
+nav a.active {
+  background: #ffffff;
   color: var(--nav-bg);
 }
 
-/* ===================== Content Section ===================== */
-.content{
+/* Profile Photo */
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Content Boxes / Cards */
+.content.card {
   background: var(--card);
   max-width: 900px;
-  margin:28px auto;
-  padding:32px;
+  margin: 28px auto;
+  padding: 32px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Section Card for Resume/Biodata */
-.section-card{
-  background: var(--card);
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+.content.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* ===================== Headings ===================== */
-h2{
+h2 {
   color: var(--accent);
-  margin-top:24px;
-  margin-bottom:12px;
-  font-size:22px;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 22px;
   border-bottom: 2px solid var(--accent-light);
-  padding-bottom:4px;
+  padding-bottom: 4px;
 }
 
-/* ===================== Download Button ===================== */
-.btn-download {
-    display: inline-block;
-    padding: 10px 20px;
-    background: var(--accent);
-    color: #fff;
-    border-radius: 8px;
-    text-decoration: none;
-    margin: 20px 0;
-    font-weight: 600;
-    transition: 0.3s;
+p, ul {
+  font-size: 16px;
+  color: var(--text);
 }
 
-.btn-download:hover {
-    background: var(--accent-light);
+ul {
+  padding-left: 20px;
 }
 
-/* ===================== Footer ===================== */
-footer{
-  text-align:center;
+footer {
+  text-align: center;
   color: var(--muted);
-  padding:16px;
-  margin-top:20px;
-  font-size:14px;
+  padding: 16px;
+  margin-top: 20px;
+  font-size: 14px;
+  border-top: 1px solid var(--accent-light);
 }
 
-/* ===================== Skill Bar ===================== */
-.skill-bar{
-    background: #e0e0e0;
-    border-radius: 8px;
-    height: 10px;
-    margin: 5px 0 15px;
-}
+/* Responsive */
+@media(max-width: 700px){
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
 
-.skill-bar-inner{
-    height: 100%;
-    background: var(--accent);
-    border-radius: 8px;
-}
-
-/* ===================== Responsive Design ===================== */
-@media(max-width:700px){
   .profile-photo {
-      width: 80px;
-      height: 80px;
-      margin: 10px auto 0;
+    width: 80px;
+    height: 80px;
+    position: static;
+    margin: 10px auto 0;
   }
 
-  header{
-      flex-direction: column;
-      text-align: center;
-      gap:10px;
-  }
-
-  .content{
-      margin:18px;
-      padding:22px;
-  }
-
-  .btn-download{
-      width: 100%;
-      text-align: center;
+  .content.card {
+    margin: 18px;
+    padding: 22px;
   }
 }
