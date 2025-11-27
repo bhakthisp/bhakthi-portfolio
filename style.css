@@ -1,115 +1,139 @@
-:root{
-  --bg: #e8f3ff;
-  --nav-bg: #3b82f6;
-  --text: #0f172a;
-  --card: #ffffff;
-  --accent: #2563eb;
-  --accent-light: #93c5fd;
-  --muted: #475569;
-  --shadow: 0 6px 20px rgba(0,0,0,0.08);
-  --radius: 14px;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #FFF7F0;
+    color: #3A3A3A;
+    line-height: 1.6;
 }
 
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  padding:0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
-/* Profile photo on right corner */
-.profile-photo {
-    float: right;           /* Moves image to the right */
-    width: 150px;           /* Adjust size as needed */
-    height: auto;
-    margin: 0 0 15px 15px;  /* Space between image and text */
-    border-radius: 10px;    /* Rounded corners, optional */
-    border: 2px solid #87CEFA; /* Sky blue border for style */
+* {
+    transition: 0.3s ease-in-out;
 }
 
-header{
-  background: var(--nav-bg);
-  padding:16px 22px;
-  color:#fff;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-radius:0 0 var(--radius) var(--radius);
-  box-shadow: var(--shadow);
+header {
+    width: 100%;
+    background-color: #FFD8C2;
+    padding: 18px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
-header h1{
-  margin:0;
-  font-size:22px;
-  font-weight:700;
+.navbar {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav{
-  display:flex;
-  gap:14px;
+.navbar a {
+    text-decoration: none;
+    color: #3A3A3A;
+    margin: 0 15px;
+    font-weight: 500;
 }
 
-nav a{
-  color:#fff;
-  text-decoration:none;
-  padding:8px 14px;
-  border-radius:8px;
-  font-weight:600;
-  background: rgba(255,255,255,0.1);
-  transition:0.2s;
+.navbar a:hover {
+    color: #FF8F5A;
 }
 
-nav a:hover{
-  background: rgba(255,255,255,0.25);
+.hero {
+    width: 90%;
+    margin: 60px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav a.active{
-  background:#ffffff;
-  color: var(--nav-bg);
+.hero-text h1 {
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #3A3A3A;
 }
 
-.content{
-  background: var(--card);
-  max-width: 900px;
-  margin:28px auto;
-  padding:32px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+.hero-text p {
+    font-size: 18px;
+    color: #555;
 }
 
-h2{
-  color: var(--accent);
-  margin-top:24px;
-  margin-bottom:8px;
-  font-size:22px;
+.hero img {
+    width: 320px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(255,140,90,0.25);
 }
 
-p, ul{
-  font-size:16px;
-  color:var(--text);
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #FFB28A;
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 3px 12px rgba(255,140,90,0.3);
 }
 
-ul{ padding-left:20px; }
-
-footer{
-  text-align:center;
-  color:var(--muted);
-  padding:16px;
-  margin-top:20px;
-  font-size:14px;
+.btn:hover {
+    background-color: #FF8F5A;
+    transform: translateY(-3px);
 }
 
-@media(max-width: 700px){
-  header{
-    flex-direction:column;
-    text-align:center;
-    gap:10px;
-  }
-  .content{
-    margin:18px;
-    padding:22px;
-  }
+section {
+    width: 90%;
+    margin: 60px auto;
 }
 
+h2.section-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #3A3A3A;
+}
+
+.card {
+    background-color: #FFD8C2;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255,140,90,0.25);
+}
+
+.skill-item {
+    background: #FFF;
+    padding: 10px 16px;
+    border-radius: 12px;
+    display: inline-block;
+    margin: 6px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.skill-item:hover {
+    background: #FFE3D4;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #FFD8C2;
+    margin-top: 40px;
+    color: #3A3A3A;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero img {
+        margin-top: 25px;
+        width: 260px;
+    }
+}
